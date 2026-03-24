@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQUILIA - CONTACT</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fixed gradient orbs -->
+  <div class="orb orb-cyan" id="orbCyan"></div>
+  <div class="orb orb-magenta" id="orbMagenta"></div>
+  <div class="orb orb-mid"></div>
+
+  <!-- Grain canvas -->
+  <canvas id="grain-canvas"></canvas>
+
+  <!-- Content -->
+  <div class="content-wrap">
+    <nav>
+      <a href="index.html" class="nav-logo"><img src="assets/aquilia-logo.png" class="nav-logo"></a>
+      <ul class="nav-links">
+        <li><a href="index.html" id="spotify-green">Releases</a></li>
+        <li><a href="index.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+  <!-- Contact Form -->
+
+  <section class="contact">
+    <div class="contact-title">
+      <p class="hero-eyebrow">Beyond The Screen</p>
+      <h2>CONTACT<br><span class="gradient-word">US</span></h2>
+    </div>
+
+    <div class="contact-card">
+      <h2 class="contact-label">Contact form</h2>
+      <div class="contact-container">
+        <form>
+          <label>Name</label>
+          <input type="text"
+            id="name"
+            name="name"
+            required>
+          <label>Email</label>
+          <input type="email"
+            id="email"
+            name="email"
+            required>
+          <label>Inquiry</label>
+          <textarea id="inquiry"
+            name="inquiry"
+            required></textarea>
+          <input type="submit" id="submit">
+        </form>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+    <footer id="contact">
+      <div>
+        <div class="footer-logo"><a href="#" class="footer-logo"><img src="assets/aquilia-logo.png" class="nav-logo"></a></div>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">Bandcamp</a>
+          <a href="#">Spotify</a>
+          <a href="#">Demos</a>
+        </div>
+        <div>© 2026 Aquilia · All rights reserved</div>
+      </div>
+    </footer>
+
+<script>
+  // Intersection Observer for scroll reveals
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

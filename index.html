@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AQUILIA / HOME</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Fixed gradient orbs -->
+  <div class="orb orb-cyan" id="orbCyan"></div>
+  <div class="orb orb-magenta" id="orbMagenta"></div>
+  <div class="orb orb-mid"></div>
+
+  <!-- Grain canvas -->
+  <canvas id="grain-canvas"></canvas>
+
+  <!-- Content -->
+  <div class="content-wrap">
+    <nav>
+      <a href="index.html" class="nav-logo"><img src="assets/aquilia-logo.png" class="nav-logo"></a>
+      <ul class="nav-links">
+        <li><a href="#spotify" id="spotify-green">Releases</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="margin-top:12.5vh;">
+      <div class="hero-inner">
+        <h1 class="hero-title">
+          WELCOME TO<br>
+          <span class="gradient-word">AQUILIA</span><br>
+        </h1>
+        <p class="hero-sub">
+          Productions, DJ sets, and record label.
+        </p>
+        <div class="hero-cta">
+          <a href="#spotify" class="btn-primary">Explore Roster</a>
+          <a href="#releases" class="btn-ghost">Latest Releases →</a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+      <div class="marquee-track" id="marqueeTrack">
+        <span class="marquee-item"><span class="dot"></span>Progressive House</span>
+        <span class="marquee-item"><span class="dot"></span>Deep Trance</span>
+        <span class="marquee-item"><span class="dot"></span>DJ sets</span>
+        <span class="marquee-item"><span class="dot"></span>Record Label</span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee-item"><span class="dot"></span>Progressive House</span>
+        <span class="marquee-item"><span class="dot"></span>Deep Trance</span>
+        <span class="marquee-item"><span class="dot"></span>DJ sets</span>
+        <span class="marquee-item"><span class="dot"></span>Record Label</span>
+      </div>
+    </div>
+
+    <!-- Spotify -->
+    <section class="section" id="spotify">
+      <div class="spotify-title"><h2>Check us out on </h2> <img src="assets/Spotify_Full_Logo_RGB_White.png" id="spotify-logo"></div>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/1XkadA4TeBgpPFX74eWV08?utm_source=generator" width="100%" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+
+
+    <!-- Releases -->
+  <section id="news">
+  <div class="section">
+    <p class="section-label">Recent Works</p>
+    <div class="releases-list">
+      <div class="release-row">
+        <span class="release-tag anthem">Anthem</span>
+        <p class="release-title">Dreamstate</p>
+        <p class="record-desc">Aquilia's defining moment. Featured on Sasha's <em>Global Underground 013: Space Ibiza</em>, one of the most celebrated DJ compilations of its era, released on double CD and triple vinyl.</p>
+      </div>
+      <div class="release-row">
+        <span class="release-tag">Original</span>
+        <p class="release-title">Earthbound</p>
+        <p class="record-desc">A deeper, more introspective dispatch that showcased the duo's evolving sound, lush textures, tighter grooves and a refined command of tension and release.</p>
+      </div>
+      <div class="release-row">
+        <span class="release-tag">Original</span>
+        <p class="release-title">Voodoo</p>
+        <p class="record-desc">Dark, hypnotic and unmistakably Aquilia. A cornerstone of their catalogue and a dancefloor weapon that earned support across the progressive underground.</p>
+      </div>
+      <div class="release-row">
+        <span class="release-tag remix">Remix</span>
+        <p class="release-title">No More Tears</p>
+        <p class="record-desc">A rework of DJ Tiësto's <em>Allure</em> project that brought a cinematic, progressive edge to the original, earning widespread support from key DJs across Europe and Ibiza.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <p class="section-label">News</p>
+    <h2>Coming Soon...</h2>
+  </div>
+</section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+      <div>
+        <div class="section-label">About the label</div>
+        <h2 class="about-heading">
+          ELEVATED SOUND FOR<br>
+          <em>DEEPER MINDS</em><br>
+        </h2>
+        <div class="record-rack">
+          <img class="about-fig" data-alt="Earthbound- an inspiring track by Aquilia in the late 90s" src="assets/aquilia-earthbound.JPEG"/>
+          <img class="about-fig" data-alt="Earthbound- an inspiring track by Aquilia in the late 90s" src="assets/aquilia-voodoo2.JPEG" id="voodoo2"/>
+        </div>
+      </div>
+      <div class="about-body">
+        <p>
+          Aquilia was born from a single conviction: that the most important
+          music exists in the space between categories. We sign artists who create
+          work that cannot be easily filed away.
+        </p>
+        <p>
+          Founded in 1999 and operating independently across the world,
+          we work with musicians who treat sound as sculpture — shaping it into something
+          that holds weight, texture, and silence in equal measure.
+        </p>
+        <p>
+          Our catalog spans digital releases,
+          We do not chase trends. We
+          document the edges.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div>
+        <div class="footer-logo"><a href="#" class="footer-logo"><img src="assets/aquilia-logo.png" class="nav-logo"></a></div>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a href="https://www.instagram.com/aquiliamusic/">Instagram</a>
+          <a href="mailto:info@aquilia.net">Email</a>
+          <a href="https://open.spotify.com/artist/1XkadA4TeBgpPFX74eWV08?si=N2t7BIhURIGNgYlklHl45Q">Spotify</a>
+          <a href="#">Demos</a>
+        </div>
+        <div>© 2026 Aquilia · All rights reserved</div>
+        Developed by <a style="color:var(--off-white)" href="inertiatech.uk">Inertia Tech</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /* ─── HELIX GRAIN ─── */
+    const canvas = document.getElementById('grain-canvas');
+    const ctx    = canvas.getContext('2d');
+
+    let W, H, particles = [];
+    const PARTICLE_COUNT = 420;
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', () => { resize(); buildParticles(); });
+    resize();
+
+    /* Each particle has a position along the helix spine */
+    function buildParticles() {
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const t = i / PARTICLE_COUNT; // 0..1 along helix length
+        particles.push({
+          t,            // normalised helix param
+          phase: Math.random() * Math.PI * 2,  // offset within strand
+          strand: i % 2 === 0 ? 1 : -1,        // two strands
+          size: Math.random() * 1.8 + 0.4,
+          alpha: Math.random() * 0.55 + 0.15,
+          speed: Math.random() * 0.0003 + 0.0001,
+        });
+      }
+    }
+    buildParticles();
+
+    let scrollY = 0;
+    window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+    /* Color interpolation: cyan → magenta based on helix position */
+    function helixColor(t, alpha) {
+      // t: 0 = cyan, 1 = magenta
+      const r = Math.round(0   + t * 255);
+      const g = Math.round(229 - t * 229);
+      const b = Math.round(255 - t * 55);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
+
+    let lastTime = 0;
+    function draw(ts) {
+      const dt = ts - lastTime; lastTime = ts;
+      ctx.clearRect(0, 0, W, H);
+
+      /* Scroll drives helix rotation */
+      const scrollFactor = scrollY * 0.004;
+
+      const helixAmplitude = W * 0.34;  // horizontal sway
+      const helixCenterX   = W * 0.5;
+      const helixCenterY   = H * 0.5;
+      const helixHeight    = H * 1.8;   // total vertical span
+
+      for (let p of particles) {
+        /* Advance particle along helix */
+        p.t = (p.t + p.speed) % 1;
+
+        const angle = p.t * Math.PI * 8 + p.phase + scrollFactor;
+        const x = helixCenterX + Math.cos(angle * p.strand) * helixAmplitude;
+        // Vertical: map t to screen height (centered)
+        const yBase = helixCenterY + (p.t - 0.5) * helixHeight;
+        // Scroll shifts yBase so helix "moves" when you scroll
+        const y = ((yBase - scrollY * 0.5) % H + H) % H;
+
+        // Depth: use sine of angle for a 3-d feel
+        const depth = (Math.sin(angle) + 1) / 2; // 0..1
+        const size  = p.size * (0.5 + depth * 0.8);
+        const alpha = p.alpha * (0.4 + depth * 0.6);
+        const col   = helixColor(p.t, alpha);
+
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = col;
+        ctx.fill();
+      }
+
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+
+    /* ─── ORB PARALLAX ─── */
+    const orbC = document.getElementById('orbCyan');
+    const orbM = document.getElementById('orbMagenta');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY;
+      orbC.style.transform = `translateY(${s * 0.12}px)`;
+      orbM.style.transform = `translateY(${-s * 0.08}px)`;
+    });
+
+    /* ─── INTERSECTION OBSERVER for fade-in ─── */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.artist-card, .release-row, .about-heading, .about-body, .about-stats').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      io.observe(el);
+    });
+  </script>
+</body>
+</html>

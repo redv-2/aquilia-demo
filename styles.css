@@ -1,0 +1,671 @@
+  @import url(https://db.onlinewebfonts.com/c/066ce24dae3730ed6c648b09efaea93a?family=Acumin+Variable+Concept); 
+  @import url(https://db.onlinewebfonts.com/c/02b0cfe9a43c6fc48f54c9bf6f59dbfb?family=Domaine+Sans+Fine+Regular+Regular); 
+  
+
+  /*Fonts: 'Acumin Variable Concept' 'Domaine Sans Fine Regular Regular' */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00e5ff;
+      --magenta: #ff00c8;
+      --cyan-dim: rgba(0, 229, 255, 0.15);
+      --magenta-dim: rgba(255, 0, 200, 0.15);
+      --white: #f8f8f6;
+      --off-white: #efefed;
+      --dark: #0a0a0a;
+      --mid: #444;
+      --night: #1d1d1d;
+      --spotify: rgb(74, 252, 74);
+      --burnt-magenta: #181116;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--night);
+      color: var(--off-white);
+      font-family: 'Acumin Variable Concept', monospace;
+      overflow-x: hidden;
+    }
+
+    /* ─── GRAIN CANVAS (fixed) ─── */
+    #grain-canvas {
+      position: fixed;
+      top: 100px; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: -10;
+    }
+
+
+    /* ─── GRADIENT ORBS (fixed, behind grain) ─── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.08;
+      transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+    }
+    .orb-cyan {
+      width: 600px; height: 600px;
+      background: var(--cyan);
+      top: -100px; right: -150px;
+    }
+    .orb-magenta {
+      width: 500px; height: 500px;
+      background: var(--magenta);
+      bottom: 50px; left: -100px;
+    }
+    .orb-mid {
+      width: 400px; height: 400px;
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      top: 40%; left: 30%;
+      opacity: 0.08;
+    }
+
+    /* ─── LAYOUT ─── */
+    .content-wrap {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      background: linear-gradient(var(--dark), #ffffff00)
+    }
+    .nav-logo {
+      width:150px;
+      height:65px;
+      position: relative;
+      z-index: 100;
+    }
+    .nav-logo span {
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Acumin Variable Concept', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 87.5vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 80px;
+      position: relative;
+      background:url(assets/tony-steve.jpeg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero-inner {
+      background: radial-gradient(black, transparent);
+      padding:25px 0;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Acumin Variable Concept', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
+      font-size: clamp(5rem, 10vw, 8rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--off-white);
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+      text-align: center;
+    }
+
+    @media screen and (min-width:800px) {
+        .hero {
+            padding-top: 100px;
+        }
+    }
+
+    .gradient-word {
+      background: linear-gradient(90deg, var(--cyan) 0%, var(--magenta) 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .hero-sub {
+      margin-top: 32px;
+      max-width: 50%;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp 1s 0.7s forwards;
+      text-align: center;
+      margin-left:25%;
+    }
+    .hero-cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 1s 0.9s forwards;
+    }
+
+    #about-hero {
+      background-image: url(assets/aquilia_voodoo_upscaled_2x_edit.png);
+      background-size: cover;
+      background-position: center;
+      margin-top:12.5vh;
+    }
+
+    .gradient-fade {
+      width:100%;
+      height:100px;
+      background: linear-gradient(var(--dark), rgba(0,0,0,0));
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      font-family: 'Acumin Variable Concept', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: var(--dark);
+      color: var(--white);
+      text-decoration: none;
+      border: none;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #00b8d4, #d500a0);
+    }
+    .btn-ghost {
+      display: inline-block;
+      font-family: 'Acumin Variable Concept', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--cyan); }
+
+    /* scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      right: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards;
+    }
+    .scroll-hint span {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #999;
+      writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, #bbb, transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 18px 0;
+      background: rgba(59, 59, 59, 0.3);
+      backdrop-filter: blur(4px);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-item {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      padding: 0 40px;
+      color: #75d8df;
+    }
+    .marquee-item .dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      margin-right: 40px;
+      vertical-align: middle;
+    }
+
+    /* ─── ARTISTS ─── */
+    .section {
+      padding: 120px 48px;
+    }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 64px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #ddd, transparent);
+    }
+
+    #spotify-green:hover{
+      color:var(--spotify);
+    }
+
+    #spotify {
+      background-color: #00000077;
+      border-top: var(--spotify) 1px dashed;
+      border-bottom: var(--spotify) 1px dashed;
+      margin-top:25px;
+    }
+
+    #spotify-logo{
+      height:50px;;
+    }
+
+    .spotify-title {
+      display: flex;
+      height:50px;
+      width:80%;
+      justify-content: center;
+      gap: 1em;
+      margin-left:10%;
+      align-items: center;
+      margin-bottom:25px;
+      font-weight:200;
+      text-transform: uppercase;
+    }
+
+    .spotify-title h2 {
+      line-height: 1em;
+      padding-top:5px;
+    }
+
+    /* ─── RELEASES ─── */
+    .releases-section {
+      padding: 0 48px 120px;
+    }
+    .releases-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .release-row {
+      display: grid;
+      grid-template-columns: 80px 1fr auto auto;
+      align-items: center;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid #e8e8e8;
+      transition: padding-left 0.3s;
+      position: relative;
+    }
+    .release-row::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      transition: width 0.3s;
+    }
+    .release-row:hover { padding-left: 20px; }
+    .release-row:hover::before { width: 12px; }
+    .release-num {
+      font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #ccc;
+    }
+    .release-title {
+      font-family: 'Acumin Variable Concept', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .release-artist {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+    .release-year {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: #bbb;
+    }
+    .release-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid #e0e0e0;
+      color: #aaa;
+    }
+    .release-tag.remix {
+      border-color: var(--magenta);
+      color: var(--magenta);
+    }
+
+    .release-tag.anthem {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* ─── ABOUT / SPLIT ─── */
+    .about-section {
+      padding: 120px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-heading {
+      font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      color: var(--off-white);
+    }
+    .about-heading em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-body {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--white);
+    }
+    .about-body p + p { margin-top: 20px; }
+    .about-stats {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 0.02em;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    .about-fig {
+      width:150px;
+      height:150px;
+      margin:25px 0;
+      border-radius: 1em;
+      animation: fadeUp 1s forwards;
+    }
+
+    .record-rack {
+      display:flex;
+      height:150px;
+    }
+
+    @media screen and (max-width:700px) {
+      .about-section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .record-rack{
+        width:100%;
+        justify-content: center;
+      }
+    }
+
+
+    /* --- BIOGRAPHIES --- */
+
+    .bio-name {
+      font-size:2.5rem;
+      font-family: "Domaine Sans Fine Regular Regular";
+    }
+
+    .bio-name span {
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bio-text {
+      font-family: 'Acumin Variable Concept', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .section-spacer {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #ddd, transparent);
+    margin-top:30px;
+    margin-bottom:20px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--cyan);
+      padding: 48px 48px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      background: rgb(12, 12, 12);
+      z-index: 15;
+      position:relative;
+    }
+    .footer-logo {
+      width:200px;
+      height:auto;
+    }
+    .footer-meta {
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ccc;
+      text-align: right;
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--magenta); }
+
+    /* --- CONTACT SHEET --- */
+
+    .contact {
+      margin-top:100px;
+    }
+
+    .contact-title {
+      font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
+      font-size: clamp(2rem, 10vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--off-white);
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: 1rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 64px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
+    }
+
+    .contact-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #ddd, transparent);
+    }
+
+    .contact-label::before {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, #ddd, transparent);
+    }
+
+    .contact-card {
+      background-color: var(--burnt-magenta);
+      padding:20px 50px;
+      width:500px;
+      margin:auto;
+      margin-bottom:50px;
+      margin-top:25px;
+      border-radius:2em;
+      border-top-left-radius: 0.25em;
+      border-bottom-right-radius: 0.25em;
+      border:var(--magenta) 1px solid;
+      background-image: 
+                radial-gradient(at 0% 0%, rgba(196, 127, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(129, 236, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 81, 250, 0.12) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(13, 13, 24, 1) 0px, transparent 50%);
+      box-shadow: var(--magenta-dim) 0px 0px 10px 5px;
+    }
+
+    .contact-card form {
+      display:flex;
+      flex-direction: column;
+      width:300px;
+      margin-left:auto;
+      margin-right:auto;
+      gap:20px;
+      text-align: center;
+    }
+
+    .contact-card form label {
+      border: var(--cyan) solid 1px;
+      border-radius: 1em;
+      padding:5px 0;
+      text-transform: uppercase;
+      color:var(--cyan);
+      background-color: var(--cyan-dim);
+      width:100px;
+      margin-left:100px;
+    }
+
+    .contact-card form input, .contact-card form textarea {
+      background-color: #0a0a0a;
+      color:var(--off-white);
+      padding:1em;
+      border:var(--mid) solid 1px;
+      border-radius:1em;
+    }
+
+    .contact-container {
+      width:100%;
+      padding:25px 0;
+    }
+
+    #submit {
+      width:100px;
+      text-transform: uppercase;
+      font-family: 'Acumin Variable Concept', sans-serif;
+      border: var(--magenta) solid 1px;
+      border-radius: 1em;
+      padding:5px 0;
+      color:var(--magenta);
+      background-color: var(--magenta-dim);
+      width:100px;
+      margin-left:100px;
+    }
+
+    #submit:hover {
+      background-color: #2e0022;
+      transition: background-color 0.2s;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
