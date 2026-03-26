@@ -141,13 +141,14 @@
 
     .hero-title {
       font-family: 'Domaine Sans Fine Regular Regular', sans-serif;
-      font-size: clamp(5rem, 10vw, 8rem);
+      font-size: clamp(3rem, 10vw, 8rem);
       line-height: 1;
       letter-spacing: -0.01em;
       color: var(--off-white);
       opacity: 0;
       animation: fadeUp 1s 0.5s forwards;
       text-align: center;
+      overflow: hidden;
     }
 
     @media screen and (min-width:800px) {
@@ -541,6 +542,18 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--magenta); }
+
+    @media screen and (max-width:600px) {
+      .footer-logo {
+        display: none;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+    }
 
     /* --- CONTACT SHEET --- */
 
